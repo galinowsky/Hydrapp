@@ -6,11 +6,11 @@
     <title>WTF: Webpack starter kit</title>
     <meta name="description" content="Your project description" />
     <!-- Title -->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content />
     <!-- OPTIONAL description. 2-4 sentences. -->
-    <meta property="og:description" content="" />
+    <meta property="og:description" content />
     <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
-    <meta property="og:url" content="" />
+    <meta property="og:url" content />
     <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
     <meta
       property="og:image"
@@ -18,7 +18,7 @@
     />
 
     <!-- uncomment the line below to enable PWA  -->
-    <!-- <link rel="manifest" href="manifest.json" /> -->
+    <link rel="manifest" href="manifest.json" />
 
     <link
       rel="apple-touch-icon"
@@ -145,9 +145,22 @@
     />
   </head>
   <body>
-    <div class="hello">
-      <img class="hello__logo" src="../assets/img/logo.svg" alt="WTF " />
-      <span class="hello__circles"></span>
+    <div class="hydro">
+      <span class="hydro__circles"></span>
+
+      <header class="hydro__title">Hydrapp</header>
+      <p>Track You hydration!</p>
+      <div class="hydro__logo">
+        <img
+          class="hydro__img"
+          src="../assets/img/water-glass.svg"
+          alt="WTF "
+        />
+        <div class="hydro__counter">0</div>
+      </div>
+
+      <button class="hydro__button addGlass">Add Glass</button>
+      <button class="hydro__button delGlass">Delete Glass</button>
     </div>
   </body>
 </html>
