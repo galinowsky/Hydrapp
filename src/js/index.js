@@ -13,6 +13,8 @@ let newDay = {
   value: 0,
 };
 const todayKey = new Date().toISOString().slice(0, 10);
+let newKey = new Date().toISOString().slice(0, 10);
+
 glasses = JSON.parse(localStorage.getItem("Glasses"));
 
 if (!glasses) {
