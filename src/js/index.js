@@ -1,5 +1,6 @@
 import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
+import "./table.js"
 registerSW();
 // localStorage.setItem("Notes", JSON.stringify(NotesArr));
 // JSON.parse(localStorage.getItem("Notes"));
@@ -50,3 +51,28 @@ const setCounter = () => {
   );
   localStorage.setItem("Glasses", JSON.stringify(glasses));
 };
+
+
+
+
+
+let historyTable = document.querySelector('.history-table__body')
+console.log(historyTable)
+glasses.forEach(day =>{
+let row = historyTable.insertRow(-1)
+ let dateCell = row.insertCell(0)
+ let valCell = row.insertCell(1)
+ 
+ dateCell.appendChild(document.createTextNode(day.key))
+ valCell.appendChild(document.createTextNode(day.value))
+// dateCell. = 
+})
+
+
+
+let forw = document.querySelector('.dateForward')
+let backw = document.querySelector('.dateBackward')
+let todayDate = new Date().toISOString().slice(0, 10)
+document.querySelector('.todayDate').innerHTML = new Date().toISOString().slice(0, 10)
+console.log()
+forw.addEventListener('click',)

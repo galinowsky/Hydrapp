@@ -8,8 +8,75 @@ body {
   background: $hydro;
   color: #fff;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+}
+
+.header{
+  position: absolute;
+  top:0;
+  height:10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+position: absolute;
+top:5px;
+padding: 5px;
+width: 40%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+&__link{
+  font-size: 35px;
+  font-weight: 500;
+  text-decoration: none;
+  color:white;
+  top: 50%;
+  &:hover {
+    font-size: 45px;
+
+
+  }
+}
+
+
+
+
+
+}
+
+.history {
+  margin: 30px 0 ;
+}
+
+table {
+  width: 200px;
+  background-color: $hydro;
+  // border-collapse: collapse;
+  border-width: 2px;
+  border-color: #F3F3F3;
+  color: white;
+  border-style: solid;
+  color: #000000;
+}
+
+.customTable td, .customTable th {
+  border-width: 2px;
+  border-color: #F3F3F3;
+  border-style: solid;
+  padding: 5px;
+}
+
+.customTable thead {
+  background-color: #f3214f;
 }
