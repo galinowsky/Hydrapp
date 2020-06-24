@@ -81,6 +81,7 @@ console.log(moment().format("L"))
 forw.addEventListener('click',() => {
   today.setDate(today.getDate() + 1);
 document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
+
 })
 
 backw.addEventListener('click',() => {
