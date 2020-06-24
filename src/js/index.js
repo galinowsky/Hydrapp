@@ -1,6 +1,7 @@
 import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
-import "./table.js"
+import "./table.js";
+import moment from 'moment';
 registerSW();
 // localStorage.setItem("Notes", JSON.stringify(NotesArr));
 // JSON.parse(localStorage.getItem("Notes"));
@@ -30,7 +31,7 @@ if (!glasses) {
     }
   });
   if (found == false)
-    glasses.push(newDay);
+    glasses.unshift(newDay);
 }
 
 addGlass.addEventListener("click", () => {
@@ -73,6 +74,34 @@ let row = historyTable.insertRow(-1)
 let forw = document.querySelector('.dateForward')
 let backw = document.querySelector('.dateBackward')
 let todayDate = new Date().toISOString().slice(0, 10)
+let today = new Date()
 document.querySelector('.todayDate').innerHTML = new Date().toISOString().slice(0, 10)
-console.log()
-// forw.addEventListener('click',)
+console.log(moment().format("L"))
+
+forw.addEventListener('click',() => {
+  today.setDate(today.getDate() + 1);
+document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
+})
+
+backw.addEventListener('click',() => {
+  today.setDate(today.getDate() - 1);
+document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
+})
+
+
+
+
+//  forw.addEventListener('click',)
+
+// let daysInMonth = getDaysInMonthUTC(6,2020)
+// // console.log(daysInMonth)
+// // function getDaysInMonthUTC(month, year) {
+// //   var date = new Date(Date.UTC(year, month, 1));
+// //   var days = [];
+// //   while (date.getUTCMonth() === month) {
+// //     days.push(new Date(date));
+// //     date.setUTCDate(date.getUTCDate() + 1);
+// //   }
+// //   return days;
+// // }
+
