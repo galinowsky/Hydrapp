@@ -34,7 +34,7 @@ if (!glasses) {
     glasses.unshift(newDay);
 }
 
-addGlass.addEventListener("click", () => {
+addGlass.addEventListener("click", () => { 
   counter.innerHTML = Number(counter.innerHTML, 10) + 1;
   setCounter();
 });
