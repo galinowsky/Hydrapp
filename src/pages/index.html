@@ -145,56 +145,59 @@
     />
   </head>
   <body>
-    <header class="header">
-      <!-- <nav class="navigation">
+    <header class="app-bar">
+      <nav class="navigation">
         <a class="navigation__link" href="History.html">History</a>
         <a class="navigation__link" href="index.html">App</a>
         <a class="navigation__link" href="Chart.html">Chart</a>
-      </nav> -->
+      </nav>
     </header>
 
+    <main class="main-column">
 
-    <div class="hydro">
       <span class="hydro__circles"></span>
 
-      <header class="hydro__title">Hydrapp</header>
-      <p class="hydro__description">Track You hydration!</p>
+      <header class="app-header">
+        <h1 class="app-header__title">Hydrapp</h1>
+        <p class="app-header___decription">Track You hydration!</p>
+      </header>
 
-      <div class="Date">
+      <div class="date">
         <p>Today is:</p>
-        <div class="dateForm">
-          <button class="dateBackward button"><-</button>
-          <h2 class="todayDate">Date</h2>
-          <button class="dateForward button">-></button>
+        <div class="date__form">
+          <button class="date__elem dateBackward button"><-</button>
+          <h2 class="date__elem todayDate">Date</h2>
+          <button class="date__elem dateForward button">-></button>
         </div>
       </div>
 
-      <div class="hydro__logo">
-        <img
-          class="hydro__img"
-          src="../assets/img/water-glass.svg"
-          alt="WTF "
-        />
-        <div class="hydro__counter">0</div>
+      <div class="hydro">
+        <div class="hydro__logo">
+          <img
+            class="hydro__img"
+            src="../assets/img/water-glass.svg"
+            alt="WTF "
+          />
+          <div class="hydro__counter">0</div>
+        </div>
+
+        <button class="hydro__button addGlass">Add Glass</button>
+        <button class="hydro__button delGlass">Delete Glass</button>
       </div>
-
-      <button class="hydro__button addGlass">Add Glass</button>
-      <button class="hydro__button delGlass">Delete Glass</button>
-    </div>
-    <div class="history">
-      <h2>History</h2>
-      <table class="history-table">
-        <thead>
-          <tr>
-            <th> Date</th>
-            <th> Glasses</th>
-          </tr>
-        </thead>
-        <tbody class="history-table__body">
-     
-        </tbody>
-      </table>
-
-    </div>
+      <div class="main-column">
+        <div class="history">
+          <h2>History</h2>
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Glasses</th>
+              </tr>
+            </thead>
+            <tbody class="history-table__body"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
