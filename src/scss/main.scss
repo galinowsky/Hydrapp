@@ -1,8 +1,11 @@
-@import "~normalize.css";
 
+@import "~normalize.css";
 @import "_variables";
 @import "modules/hello.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "modules/app-bar.scss";
+
+
 
 body {
   background: $hydro;
@@ -26,13 +29,7 @@ body {
   margin: auto;
 
 }
-.app-bar{
-  position: relative;
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-}
+
 .app-header{
 
   // width: 100%;
@@ -69,34 +66,6 @@ align-items: center;
 
 }
 
-.navigation {
-position: absolute;
-top:5px;
-padding: 5px;
-width: 40%;
-margin: auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
-
-&__link{
-  font-size: 35px;
-  font-weight: 500;
-  text-decoration: none;
-  color:white;
-  top: 50%;
-  &:hover {
-    font-size: 45px;
-
-
-  }
-}
-
-
-
-
-
-}
 
 .history {
   margin: 30px 0 ;
@@ -124,4 +93,28 @@ table {
 
 .customTable thead {
   background-color: #f3214f;
+}
+
+@media screen and (max-width: 520px) {
+  .js-hamburger {
+    display: inline;
+  }
+
+  .profile-pic {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+  .navigation__link {
+    width: 75%;
+  }
+}
+.navigation__open {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  height: 220px;
 }

@@ -44,6 +44,9 @@
     "websocket-extensions": "^0.1.4"
   },
   "dependencies": {
+    "@material/button": "^7.0.0",
+    "@material/top-app-bar": "^7.0.0",
+    "material-components-web": "^7.0.0",
     "moment": "^2.27.0",
     "normalize.css": "^8.0.1"
   }

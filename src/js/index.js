@@ -3,6 +3,7 @@ import { registerSW } from "./pwa.js";
 import "./table.js";
 import moment from 'moment';
 registerSW();
+
 // localStorage.setItem("Notes", JSON.stringify(NotesArr));
 // JSON.parse(localStorage.getItem("Notes"));
 
@@ -90,6 +91,31 @@ document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10
 })
 
 
+
+
+let buttonChange = document.querySelector(".js-hamburger");
+let screen = document.documentElement.clientWidth;
+let nav = document.querySelector(".navigation");
+let navHead = document.querySelector('.app-bar')
+if (buttonChange) {
+  buttonChange.addEventListener("click", () => {
+    nav.classList.toggle("navigation__open");
+    navHead.classList.toggle("app-bar__open")
+  });
+}
+
+if (window) {
+  window.addEventListener("resize", () => {
+    if (
+      window.innerWidth >= 520 &&
+      navHead.classList.toggle("app-bar__open")
+      
+    ) {
+      // nav.classList.toggle("navigation__open");
+      navHead.classList.toggle("app-bar__open");
+    }
+  });
+}
 
 
 //  forw.addEventListener('click',)
