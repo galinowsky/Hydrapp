@@ -17,6 +17,7 @@ let newDay = {
 };
 const todayKey = new Date().toISOString().slice(0, 10);
 let newKey = new Date().toISOString().slice(0, 10);
+let monit = document.querySelector('.monit');
 
 glasses = JSON.parse(localStorage.getItem("Glasses"));
 
@@ -87,6 +88,10 @@ document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10
   if(day) {
     todayDis = day.key
     counter.innerHTML = day.value
+    monit.innerHTML = ""
+  } else {
+    monit.innerHTML = "no records for this day"
+    counter.innerHTML =  0
   }
 })
 
@@ -97,6 +102,11 @@ let day = ifDayExists(today)
   if(day) {
     todayDis = day.key
     counter.innerHTML = day.value
+    monit.innerHTML = ""
+  }else {
+    monit.innerHTML = "no records for this day"
+    counter.innerHTML =  0
+ 
   }
 })
 
@@ -106,6 +116,7 @@ const ifDayExists = (day) => {
   glasses.forEach((elem)=>{
   if(elem.key==day.toISOString().slice(0, 10)) dayExists = elem
   }
+  
 )
 return dayExists
 }
