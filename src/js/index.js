@@ -49,18 +49,26 @@ delGlass.addEventListener("click", () => {
 });
 
 const setCounter = () => {
+  if (!glasses.find((elem) => elem.key == todayKey)) {
+    glasses.unshift({
+      key: todayKey,
+      value: 0,
+    });
+  }
   glasses.find((elem) => elem.key == todayKey).value = Number(
     counter.innerHTML
   );
-  console.log("jaja");
+  Number(counter.innerHTML) > 0
+    ? (monit.innerHTML = "")
+    : (monit.innerHTML = "no records for this day");
   localStorage.setItem("Glasses", JSON.stringify(glasses));
 };
 
 let historyTable = document.querySelector(".history-table__body");
 
 const refreshTable = () => {
-  while(historyTable.firstChild){
-    historyTable.removeChild(historyTable.lastChild)
+  while (historyTable.firstChild) {
+    historyTable.removeChild(historyTable.lastChild);
   }
   glasses.forEach((day) => {
     let row = historyTable.insertRow(-1);
@@ -70,7 +78,7 @@ const refreshTable = () => {
     valCell.appendChild(document.createTextNode(day.value));
   });
 };
-if(historyTable) refreshTable();
+if (historyTable) refreshTable();
 
 let forw = document.querySelector(".dateForward");
 let backw = document.querySelector(".dateBackward");
@@ -111,7 +119,7 @@ backw.addEventListener("click", () => {
   } else {
     monit.innerHTML = "no records for this day";
     counter.innerHTML = 0;
-    todayKey = todayDis.innerHTML;
+    todayKey = document.querySelector(".todayDate").innerHTML;
   }
 });
 
