@@ -15,9 +15,8 @@ let newDay = {
   key: new Date().toISOString().slice(0, 10),
   value: 0,
 };
-const todayKey = new Date().toISOString().slice(0, 10);
-let newKey = new Date().toISOString().slice(0, 10);
-let monit = document.querySelector('.monit');
+let todayKey = new Date().toISOString().slice(0, 10);
+let monit = document.querySelector(".monit");
 
 glasses = JSON.parse(localStorage.getItem("Glasses"));
 
@@ -32,19 +31,20 @@ if (!glasses) {
       found = true;
     }
   });
-  if (found == false)
-    glasses.unshift(newDay);
+  if (found == false) glasses.unshift(newDay);
 }
 
-addGlass.addEventListener("click", () => { 
+addGlass.addEventListener("click", () => {
   counter.innerHTML = Number(counter.innerHTML, 10) + 1;
   setCounter();
+  refreshTable();
 });
 
 delGlass.addEventListener("click", () => {
   if (counter.innerHTML !== "0") {
     counter.innerHTML = Number(counter.innerHTML, 10) - 1;
     setCounter();
+    refreshTable();
   }
 });
 
@@ -52,78 +52,76 @@ const setCounter = () => {
   glasses.find((elem) => elem.key == todayKey).value = Number(
     counter.innerHTML
   );
+  console.log("jaja");
   localStorage.setItem("Glasses", JSON.stringify(glasses));
 };
 
+let historyTable = document.querySelector(".history-table__body");
 
+const refreshTable = () => {
+  while(historyTable.firstChild){
+    historyTable.removeChild(historyTable.lastChild)
+  }
+  glasses.forEach((day) => {
+    let row = historyTable.insertRow(-1);
+    let dateCell = row.insertCell(0);
+    let valCell = row.insertCell(1);
+    dateCell.appendChild(document.createTextNode(day.key));
+    valCell.appendChild(document.createTextNode(day.value));
+  });
+};
+if(historyTable) refreshTable();
 
+let forw = document.querySelector(".dateForward");
+let backw = document.querySelector(".dateBackward");
+let today = new Date();
+let todayDis = document.querySelector(".todayDate").innerHTML;
+document.querySelector(".todayDate").innerHTML = new Date()
+  .toISOString()
+  .slice(0, 10);
 
-
-let historyTable = document.querySelector('.history-table__body')
-console.log(historyTable)
-glasses.forEach(day =>{
-let row = historyTable.insertRow(-1)
- let dateCell = row.insertCell(0)
- let valCell = row.insertCell(1)
- 
- dateCell.appendChild(document.createTextNode(day.key))
- valCell.appendChild(document.createTextNode(day.value))
-// dateCell. = 
-})
-
-
-
-let forw = document.querySelector('.dateForward')
-let backw = document.querySelector('.dateBackward')
-let today = new Date()
-let todayDis = document.querySelector('.todayDate').innerHTML
-document.querySelector('.todayDate').innerHTML = new Date().toISOString().slice(0, 10)
-
-
-forw.addEventListener('click',() => {
+forw.addEventListener("click", () => {
   today.setDate(today.getDate() + 1);
-document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
+  document.querySelector(".todayDate").innerHTML = today
+    .toISOString()
+    .slice(0, 10);
   //check if this day exists in arr, if so push
-  let day = ifDayExists(today)
-  if(day) {
-    todayDis = day.key
-    counter.innerHTML = day.value
-    monit.innerHTML = ""
+  let day = ifDayExists(today);
+  if (day) {
+    todayDis = day.key;
+    counter.innerHTML = day.value;
+    monit.innerHTML = "";
   } else {
-    monit.innerHTML = "no records for this day"
-    counter.innerHTML =  0
+    monit.innerHTML = "no records for this day";
+    counter.innerHTML = 0;
   }
-})
+});
 
-backw.addEventListener('click',() => {
+backw.addEventListener("click", () => {
   today.setDate(today.getDate() - 1);
-document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
-let day = ifDayExists(today)
-  if(day) {
-    todayDis = day.key
-    counter.innerHTML = day.value
-    monit.innerHTML = ""
-  }else {
-    monit.innerHTML = "no records for this day"
-    counter.innerHTML =  0
- 
+  document.querySelector(".todayDate").innerHTML = today
+    .toISOString()
+    .slice(0, 10);
+  let day = ifDayExists(today);
+  if (day) {
+    todayDis = day.key;
+    counter.innerHTML = day.value;
+    monit.innerHTML = "";
+    todayKey = day.key;
+  } else {
+    monit.innerHTML = "no records for this day";
+    counter.innerHTML = 0;
+    todayKey = todayDis.innerHTML;
   }
-})
-
+});
 
 const ifDayExists = (day) => {
-  let dayExists  = null
-  glasses.forEach((elem)=>{
-  if(elem.key==day.toISOString().slice(0, 10)) dayExists = elem
-  }
-  
-)
-return dayExists
-}
-
-
-
-
+  let dayExists = null;
+  glasses.forEach((elem) => {
+    if (elem.key == day.toISOString().slice(0, 10)) dayExists = elem;
+  });
+  return dayExists;
+};
 
 //  forw.addEventListener('click',)
 
@@ -138,4 +136,3 @@ return dayExists
 // //   }
 // //   return days;
 // // }
-
