@@ -1,7 +1,7 @@
 import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
 import "./table.js";
-import moment from 'moment';
+import "./hamburger.js";
 registerSW();
 
 // localStorage.setItem("Notes", JSON.stringify(NotesArr));
@@ -74,48 +74,44 @@ let row = historyTable.insertRow(-1)
 
 let forw = document.querySelector('.dateForward')
 let backw = document.querySelector('.dateBackward')
-let todayDate = new Date().toISOString().slice(0, 10)
 let today = new Date()
+let todayDis = document.querySelector('.todayDate').innerHTML
 document.querySelector('.todayDate').innerHTML = new Date().toISOString().slice(0, 10)
-console.log(moment().format("L"))
+
 
 forw.addEventListener('click',() => {
   today.setDate(today.getDate() + 1);
 document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
-
+  //check if this day exists in arr, if so push
+  let day = ifDayExists(today)
+  if(day) {
+    todayDis = day.key
+    counter.innerHTML = day.value
+  }
 })
 
 backw.addEventListener('click',() => {
   today.setDate(today.getDate() - 1);
 document.querySelector('.todayDate').innerHTML = today.toISOString().slice(0, 10)
+let day = ifDayExists(today)
+  if(day) {
+    todayDis = day.key
+    counter.innerHTML = day.value
+  }
 })
 
 
-
-
-let buttonChange = document.querySelector(".js-hamburger");
-let screen = document.documentElement.clientWidth;
-let nav = document.querySelector(".navigation");
-let navHead = document.querySelector('.app-bar')
-if (buttonChange) {
-  buttonChange.addEventListener("click", () => {
-    nav.classList.toggle("navigation__open");
-    navHead.classList.toggle("app-bar__open")
-  });
+const ifDayExists = (day) => {
+  let dayExists  = null
+  glasses.forEach((elem)=>{
+  if(elem.key==day.toISOString().slice(0, 10)) dayExists = elem
+  }
+)
+return dayExists
 }
 
-if (window) {
-  window.addEventListener("resize", () => {
-    if (
-      window.innerWidth >= 520 &&
-      navHead.classList.toggle("app-bar__open")
-      
-    ) {
-      // nav.classList.toggle("navigation__open");
-      navHead.classList.toggle("app-bar__open");
-    }
-  });
-}
+
+
 
 
 //  forw.addEventListener('click',)
