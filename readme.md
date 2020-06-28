@@ -1,12 +1,14 @@
-![cover](https://cotenfrontend.pl/img/cover.png)
+![cover](https://galinowsky.github.io/Hydrapp/Hydrapp.png)
 
-# WTF Webpack Starter Kit 
+# Hydrapp PWA 
 
-Simple toolkit for your static websites development.
+Simple **Progressive Web Application**, which allow User to track his daily hydration.
 
 ## How to use it?
 
-Click on `Use this template` button to generate a new repository based on this starter kit. After that clone it to your computer, go to the project directory in console and type `npm install`.
+- Beneath the glass image, there are buttons: **Add glass** and **Remove glass** that are used to change the number of water glasses that have been drinked on particular day.
+- To Navigate through days, there are two button created, which are located above the glass image. You can go forward or backward in the order of days on the calendar, and change quantintity of glasses drinked for any day.
+- At the bottom of the page/app there is **History** of drinked glasses, which is autoupdating with any user change of glasses quantity.
 
 ## Available scripts
 
