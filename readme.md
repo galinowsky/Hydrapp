@@ -1,12 +1,19 @@
 ![cover](https://galinowsky.github.io/Hydrapp/Hydrapp.png)
-![link](https://galinowsky.github.io/Hydrapp/)
+[link](https://galinowsky.github.io/Hydrapp/)
 # Hydrapp PWA 
 
 Simple **Progressive Web Application**, which allow User to track his daily hydration.
 
 ## How to use it?
-### Getting app shortcut
-- If You are using desktop web browser, go on thle link
+### Getting app shortcut 
+- **On desktop**  
+    1. Go on the link [link](https://galinowsky.github.io/Hydrapp/) 
+    2. Click **Install Hydrapp aplication** inside the page adress bar
+    3. Click **Install**
+- **On mobile** 
+    1. Go on the link [link](https://galinowsky.github.io/Hydrapp/) 
+    2. Click **options**
+    3. Click  **Add to home screen**
 
 ### In App usage
 - Beneath the glass image, there are buttons: **Add glass** and **Remove glass** that are used to change the number of water glasses that have been drinked on particular day.
