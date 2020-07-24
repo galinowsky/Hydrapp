@@ -6,7 +6,8 @@ registerSW();
 
 // localStorage.setItem("Notes", JSON.stringify(NotesArr));
 // JSON.parse(localStorage.getItem("Notes"));
-
+let glassImg = document.querySelector(".hydro__logo")
+console.log(glassImg)
 let counter = document.querySelector(".hydro__counter");
 let addGlass = document.querySelector(".addGlass");
 let delGlass = document.querySelector(".delGlass");
@@ -38,6 +39,7 @@ addGlass.addEventListener("click", () => {
   counter.innerHTML = Number(counter.innerHTML, 10) + 1;
   setCounter();
   refreshTable();
+  
 });
 
 delGlass.addEventListener("click", () => {
@@ -89,6 +91,8 @@ document.querySelector(".todayDate").innerHTML = new Date()
   .slice(0, 10);
 
 forw.addEventListener("click", () => {
+  // console.log(glassImg)
+  glassImg.classList.toggle('changeGlassAnimation')
   today.setDate(today.getDate() + 1);
   document.querySelector(".todayDate").innerHTML = today
     .toISOString()
@@ -103,6 +107,8 @@ forw.addEventListener("click", () => {
     monit.innerHTML = "no records for this day";
     counter.innerHTML = 0;
   }
+  // setTimeout(glassImg.classList.toggle('changeGlassAnimation'),3000)
+  // // setTimeout(console.log('dupa'),3000) 
 });
 
 backw.addEventListener("click", () => {

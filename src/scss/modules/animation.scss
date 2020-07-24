@@ -49,6 +49,9 @@
   animation: glassApear 0.5s ease-in 0.5s  both;
 //   animation: changeGlass 0.3s ease-in-out 0.2s forwards;
 }
+.changeGlassAnimation {
+    animation: changeGlass 0.3s ease-in-out 0.1s forwards;
+}
 
 //add animation on tranistion beteen days
 //add animation to fill glass after adding glass of water
