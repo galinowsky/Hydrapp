@@ -90,9 +90,15 @@ document.querySelector(".todayDate").innerHTML = new Date()
   .toISOString()
   .slice(0, 10);
 
+const addChangeGlassAnimationForward = () =>{
+  glassImg.classList.toggle('changeGlassAnimationForward')
+}
+const addChangeGlassAnimationBack = () =>{
+  glassImg.classList.toggle('changeGlassAnimationBack')
+}
 forw.addEventListener("click", () => {
   // console.log(glassImg)
-  glassImg.classList.toggle('changeGlassAnimation')
+  addChangeGlassAnimationForward();
   today.setDate(today.getDate() + 1);
   document.querySelector(".todayDate").innerHTML = today
     .toISOString()
@@ -109,9 +115,11 @@ forw.addEventListener("click", () => {
   }
   // setTimeout(glassImg.classList.toggle('changeGlassAnimation'),3000)
   // // setTimeout(console.log('dupa'),3000) 
+  setTimeout(() => requestAnimationFrame(addChangeGlassAnimationForward),500)
 });
 
 backw.addEventListener("click", () => {
+  addChangeGlassAnimationBack();
   today.setDate(today.getDate() - 1);
   document.querySelector(".todayDate").innerHTML = today
     .toISOString()
@@ -127,6 +135,7 @@ backw.addEventListener("click", () => {
     counter.innerHTML = 0;
     todayKey = document.querySelector(".todayDate").innerHTML;
   }
+  setTimeout(() => requestAnimationFrame(addChangeGlassAnimationBack),500)
 });
 
 const ifDayExists = (day) => {
@@ -136,6 +145,14 @@ const ifDayExists = (day) => {
   });
   return dayExists;
 };
+
+
+const glassAppear = () => {
+glassImg.classList.toggle("hydro__logo--enter")
+ setTimeout(() => glassImg.classList.toggle("hydro__logo--enter"),1000 )
+}
+
+glassAppear();
 
 //  forw.addEventListener('click',)
 
