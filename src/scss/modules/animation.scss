@@ -58,6 +58,10 @@
     opacity: 1;
   }
 }
+@keyframes appBar{
+from {opacity: 0;}
+to {opacity: 1;}
+}
 .hydro__logo--enter {
   animation: glassApear 0.5s ease-in 0.5s  both;
 //   animation: changeGlass 0.3s ease-in-out 0.2s forwards;
@@ -69,5 +73,18 @@
   animation: changeGlassBack 0.3s ease-in-out 0.1s forwards;
 }
 
+.app-bar {
+  // transition: all 2s ease-in 0.3s ;
+  // animation: appBar 0.3s ease-in 0.3s both
+ }
+ .app-bar__open{
+
+ }
+
+// .app-bar__open{
+ .navigation__open {
+  animation: appBar 0.3s ease-in 0.3s both
+ }
+// }
 //add animation on tranistion beteen days
 //add animation to fill glass after adding glass of water
