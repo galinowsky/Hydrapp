@@ -113,8 +113,6 @@ forw.addEventListener("click", () => {
     monit.innerHTML = "no records for this day";
     counter.innerHTML = 0;
   }
-  // setTimeout(glassImg.classList.toggle('changeGlassAnimation'),3000)
-  // // setTimeout(console.log('dupa'),3000) 
   setTimeout(() => requestAnimationFrame(addChangeGlassAnimationForward),500)
 });
 
