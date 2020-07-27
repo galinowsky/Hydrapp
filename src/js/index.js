@@ -6,8 +6,8 @@ registerSW();
 
 // localStorage.setItem("Notes", JSON.stringify(NotesArr));
 // JSON.parse(localStorage.getItem("Notes"));
-let glassImg = document.querySelector(".hydro__logo")
-console.log(glassImg)
+let glassImg = document.querySelector(".hydro__logo");
+console.log(glassImg);
 let counter = document.querySelector(".hydro__counter");
 let addGlass = document.querySelector(".addGlass");
 let delGlass = document.querySelector(".delGlass");
@@ -39,7 +39,6 @@ addGlass.addEventListener("click", () => {
   counter.innerHTML = Number(counter.innerHTML, 10) + 1;
   setCounter();
   refreshTable();
-  
 });
 
 delGlass.addEventListener("click", () => {
@@ -90,50 +89,57 @@ document.querySelector(".todayDate").innerHTML = new Date()
   .toISOString()
   .slice(0, 10);
 
-const addChangeGlassAnimationForward = () =>{
-  glassImg.classList.toggle('changeGlassAnimationForward')
-}
-const addChangeGlassAnimationBack = () =>{
-  glassImg.classList.toggle('changeGlassAnimationBack')
-}
+const addChangeGlassAnimationForward = () => {
+  glassImg.classList.toggle("changeGlassAnimationForward");
+};
+const addChangeGlassAnimationBack = () => {
+  glassImg.classList.toggle("changeGlassAnimationBack");
+};
 forw.addEventListener("click", () => {
   // console.log(glassImg)
   addChangeGlassAnimationForward();
-  today.setDate(today.getDate() + 1);
-  document.querySelector(".todayDate").innerHTML = today
-    .toISOString()
-    .slice(0, 10);
-  //check if this day exists in arr, if so push
-  let day = ifDayExists(today);
-  if (day) {
-    todayDis = day.key;
-    counter.innerHTML = day.value;
-    monit.innerHTML = "";
-  } else {
-    monit.innerHTML = "no records for this day";
-    counter.innerHTML = 0;
-  }
-  setTimeout(() => requestAnimationFrame(addChangeGlassAnimationForward),500)
+  setTimeout(() => {
+    today.setDate(today.getDate() + 1);
+    document.querySelector(".todayDate").innerHTML = today
+      .toISOString()
+      .slice(0, 10);
+    //check if this day exists in arr, if so push
+    let day = ifDayExists(today);
+    if (day) {
+      todayDis = day.key;
+      counter.innerHTML = day.value;
+      monit.innerHTML = "";
+    } else {
+      monit.innerHTML = "no records for this day";
+      counter.innerHTML = 0;
+    }
+  }, 250);
+
+  setTimeout(() => requestAnimationFrame(addChangeGlassAnimationForward), 500);
 });
 
 backw.addEventListener("click", () => {
   addChangeGlassAnimationBack();
-  today.setDate(today.getDate() - 1);
-  document.querySelector(".todayDate").innerHTML = today
-    .toISOString()
-    .slice(0, 10);
-  let day = ifDayExists(today);
-  if (day) {
-    todayDis = day.key;
-    counter.innerHTML = day.value;
-    monit.innerHTML = "";
-    todayKey = day.key;
-  } else {
-    monit.innerHTML = "no records for this day";
-    counter.innerHTML = 0;
-    todayKey = document.querySelector(".todayDate").innerHTML;
-  }
-  setTimeout(() => requestAnimationFrame(addChangeGlassAnimationBack),500)
+
+  setTimeout(() => {
+    today.setDate(today.getDate() - 1);
+    document.querySelector(".todayDate").innerHTML = today
+      .toISOString()
+      .slice(0, 10);
+    let day = ifDayExists(today);
+    if (day) {
+      todayDis = day.key;
+      counter.innerHTML = day.value;
+      monit.innerHTML = "";
+      todayKey = day.key;
+    } else {
+      monit.innerHTML = "no records for this day";
+      counter.innerHTML = 0;
+      todayKey = document.querySelector(".todayDate").innerHTML;
+    }
+  }, 250);
+
+  setTimeout(() => requestAnimationFrame(addChangeGlassAnimationBack), 500);
 });
 
 const ifDayExists = (day) => {
@@ -144,11 +150,10 @@ const ifDayExists = (day) => {
   return dayExists;
 };
 
-
 const glassAppear = () => {
-glassImg.classList.toggle("hydro__logo--enter")
- setTimeout(() => glassImg.classList.toggle("hydro__logo--enter"),1000 )
-}
+  glassImg.classList.toggle("hydro__logo--enter");
+  setTimeout(() => glassImg.classList.toggle("hydro__logo--enter"), 1000);
+};
 
 glassAppear();
 
