@@ -17,13 +17,13 @@
 }
 
 .hydro {
-  height: 60vh;
+  // height: 60vh;
   position: relative;
   z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   &__logo {
     position: relative;
     display: flex;

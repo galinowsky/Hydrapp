@@ -1,6 +1,6 @@
 import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
-import "./table.js";
+// import "./table.js";
 import "./hamburger.js";
 registerSW();
 
@@ -79,6 +79,7 @@ const refreshTable = () => {
     valCell.appendChild(document.createTextNode(day.value));
   });
 };
+console.log(historyTable)
 if (historyTable) refreshTable();
 
 let forw = document.querySelector(".dateForward");

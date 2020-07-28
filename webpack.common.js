@@ -5,6 +5,7 @@ module.exports = {
   /* here you can define another js file */
   entry: {
     index: "./src/js/index.js",
+    table: "./src/js/table.js",
 
   },
   output: {
@@ -85,7 +86,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/History.html",
       inject: true,
-      chunks: ["index"],
+      chunks: ["table"],
       filename: "History.html",
     }),
     new HtmlWebpackPlugin({
