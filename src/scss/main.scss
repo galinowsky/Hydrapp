@@ -85,9 +85,10 @@ table {
   border-color: #f3f3f3;
   border-style: solid;
   padding: 5px;
-}
-.chart{
+}#history-chart{
   // background-color: WHITE;
+width:400px;
+height: 300px;
 }
 
 .customTable thead {
@@ -108,6 +109,9 @@ table {
   .navigation__link {
     width: 75%;
   }
+}
+#history-chart {
+  width:95vw;
 }
 .navigation__open {
   display: flex;
