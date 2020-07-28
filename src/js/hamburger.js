@@ -8,7 +8,8 @@ if (buttonChange) {
     navHead.classList.toggle("app-bar__open")
   });
 }
-
+console.log(buttonChange)
+console.log(navHead)
 if (window) {
   window.addEventListener("resize", () => {
     if (
@@ -16,6 +17,8 @@ if (window) {
       navHead.classList.toggle("app-bar__open")
       
     ) {
+      // console.log('jajami')
+
       // nav.classList.toggle("navigation__open");
       navHead.classList.toggle("app-bar__open");
     }

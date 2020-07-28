@@ -4,7 +4,6 @@ import { registerSW } from "./pwa.js";
 import "./hamburger.js";
 registerSW();
 var Chart = require('chart.js');
-console.log('jaaaajaaa')
 
 let glasses = [];
 
@@ -28,10 +27,7 @@ if (historyTable) refreshTable();
 
 let days = glasses.map(day => (day.key))
 let drinkedGlasses = glasses.map(day => (day.value))
-console.log(days)
-console.log(drinkedGlasses)
 var ctx = document.querySelector('#history-chart');
-console.log(myChart)
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
