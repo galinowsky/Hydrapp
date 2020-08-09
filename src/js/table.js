@@ -25,9 +25,14 @@ const refreshTable = () => {
 };
 if (historyTable) refreshTable();
 
-let days = glasses.map(day => (day.key))
-let drinkedGlasses = glasses.map(day => (day.value))
+let newGlassses = glasses.sort((a,b) => {
+    let dateA = new Date(a.key), dateB = new Date(b.key)
+    return dateA - dateB
+  })
+let days = newGlassses.map(day => (day.key))
+let drinkedGlasses = newGlassses.map(day => (day.value))
 var ctx = document.querySelector('#history-chart');
+
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {

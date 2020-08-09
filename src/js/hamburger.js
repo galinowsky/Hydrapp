@@ -10,8 +10,8 @@ if (buttonChange) {
     navHead.classList.toggle("app-bar__open")
   });
 }
-console.log(buttonChange)
-console.log(navHead)
+// console.log(buttonChange)
+// console.log(navHead)
 if (window) {
   window.addEventListener("resize", () => {
     if (
