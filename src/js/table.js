@@ -10,12 +10,15 @@ let glasses = [];
 glasses = JSON.parse(localStorage.getItem("Glasses"));
 
 let historyTable = document.querySelector(".history-table__body");
-
+let newGlasses = glasses.sort((a,b) => {
+    let dateA = new Date(a.key), dateB = new Date(b.key)
+    return dateA - dateB
+  })
 const refreshTable = () => {
   while (historyTable.firstChild) {
     historyTable.removeChild(historyTable.lastChild);
   }
-  glasses.forEach((day) => {
+  newGlasses.reverse().forEach((day) => {
     let row = historyTable.insertRow(-1);
     let dateCell = row.insertCell(0);
     let valCell = row.insertCell(1);
@@ -25,12 +28,10 @@ const refreshTable = () => {
 };
 if (historyTable) refreshTable();
 
-let newGlassses = glasses.sort((a,b) => {
-    let dateA = new Date(a.key), dateB = new Date(b.key)
-    return dateA - dateB
-  })
-let days = newGlassses.map(day => (day.key))
-let drinkedGlasses = newGlassses.map(day => (day.value))
+
+  console.log(newGlasses)
+let days = newGlasses.map(day => (day.key))
+let drinkedGlasses = newGlasses.map(day => (day.value))
 var ctx = document.querySelector('#history-chart');
 
 var myChart = new Chart(ctx, {
