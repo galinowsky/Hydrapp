@@ -67,18 +67,24 @@ to {opacity: 1;}
 //   animation: changeGlass 0.3s ease-in-out 0.2s forwards;
 }
 .changeGlassAnimationForward {
-    animation: changeGlassForward 0.3s ease-in-out 0.1s forwards;
+    animation: changeGlassForward 0.4s ease-in-out 0.1s forwards;
 }
 .changeGlassAnimationBack {
-  animation: changeGlassBack 0.3s ease-in-out 0.1s forwards;
+  animation: changeGlassBack 0.4s ease-in-out 0.1s forwards;
 }
 
 .app-bar {
-  // transition: all 2s ease-in 0.3s ;
+  //  transition: all 2s ease-in 0.3s ;
    animation: appBar 0.3s ease-in 0.3s both
+ }
+ .hydro__counter {
+  transition: all 0.1s ease-in  ;
  }
  .app-bar__open{
 
+ }
+ .navigation__link {
+  transition: all 0.1s ease-in  ;
  }
 
 // .app-bar__open{

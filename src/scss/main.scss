@@ -121,3 +121,27 @@ height: 300px;
   align-content: center;
   height: 220px;
 }
+.description {
+  max-width: 410px;
+  /* margin-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 34vh;
+
+  &__header{
+    margin-bottom: 20px;
+    
+  }
+  &__paragraph{
+text-align: justify;
+  }
+
+}
+.portfolio-link{
+  text-decoration: none; 
+  color:#183bac;
+  font-size: larger;
+}
+

@@ -23,7 +23,7 @@ if (window) {
 
       // tempChart.setAttribute('width', '300')
       // tempChart.setAttribute('height', '275')
-      // nav.classList.toggle("navigation__open");
+      //  nav.classList.toggle("navigation__open");
       navHead.classList.toggle("app-bar__open");
 
     }

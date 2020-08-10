@@ -85,3 +85,19 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+
+// const refreshTable = () => {
+//     while (historyTable.firstChild) {
+//       historyTable.removeChild(historyTable.lastChild);
+//     }
+//     glasses.forEach((day) => {
+//       let row = historyTable.insertRow(-1);
+//       let dateCell = row.insertCell(0);
+//       let valCell = row.insertCell(1);
+//       dateCell.appendChild(document.createTextNode(day.key));
+//       valCell.appendChild(document.createTextNode(day.value));
+//     });
+//   };
+//   console.log(historyTable)
+//   if (historyTable) refreshTable();

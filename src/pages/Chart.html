@@ -145,18 +145,32 @@
     />
   </head>
   <body>
-    <header class="header">
+    <header class="app-bar">
+      <i class="fa fa-bars js-hamburger" style="font-size: 36px;"></i>
       <nav class="navigation">
         <a class="navigation__link" href="History.html">History</a>
         <a class="navigation__link" href="index.html">App</a>
-        <a class="navigation__link" href="Chart.html">Chart</a>
+        <a class="navigation__link" href="Chart.html">About</a>
       </nav>
     </header>
-    <main>
-      <div class="main-column">
-      
-      </div>
+    <main class="main-column">
+      <header class="app-header">
+        <h1 class="app-header__title">Hydrapp</h1>
+        <p class="app-header___decription">Read about this App</p>
+      </header>
+      <article class="description">
+        <h3 class="decription__header">App that counts water</h3>
+        <p class="description__paragaph">
+          Hydrap is simple <strong>PWA</strong> app, that allow user to track
+          his daily hydration. This app is builded on WTF preconfigured webpack,
+          <strong>vanilla.js</strong> and also using <strong>node.js</strong>.
+          To present data in form of a chart, there was
+          <strong>Chart.js</strong> library used. 
+        </p>
+        <footer class="description__footer">
+          Created by <a class="portfolio-link" href="https://galinowsky.github.io/">Jakub Galiński</a>
+        </footer>
+      </article>
     </main>
-    
   </body>
 </html>

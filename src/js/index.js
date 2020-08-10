@@ -38,14 +38,14 @@ if (!glasses) {
 addGlass.addEventListener("click", () => {
   counter.innerHTML = Number(counter.innerHTML, 10) + 1;
   setCounter();
-  refreshTable();
+  // refreshTable();
 });
 
 delGlass.addEventListener("click", () => {
   if (counter.innerHTML !== "0") {
     counter.innerHTML = Number(counter.innerHTML, 10) - 1;
     setCounter();
-    refreshTable();
+    // refreshTable();
   }
 });
 
@@ -67,20 +67,7 @@ const setCounter = () => {
 
 let historyTable = document.querySelector(".history-table__body");
 
-const refreshTable = () => {
-  while (historyTable.firstChild) {
-    historyTable.removeChild(historyTable.lastChild);
-  }
-  glasses.forEach((day) => {
-    let row = historyTable.insertRow(-1);
-    let dateCell = row.insertCell(0);
-    let valCell = row.insertCell(1);
-    dateCell.appendChild(document.createTextNode(day.key));
-    valCell.appendChild(document.createTextNode(day.value));
-  });
-};
-console.log(historyTable)
-if (historyTable) refreshTable();
+
 
 let forw = document.querySelector(".dateForward");
 let backw = document.querySelector(".dateBackward");
