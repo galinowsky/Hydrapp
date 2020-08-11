@@ -2,7 +2,7 @@ let buttonChange = document.querySelector(".js-hamburger");
 let screen = document.documentElement.clientWidth;
 let nav = document.querySelector(".navigation");
 let navHead = document.querySelector('.app-bar')
-let tempChart = document.querySelector('#history-chart');
+// let tempChart = document.querySelector('#history-chart');
 
 if (buttonChange) {
   buttonChange.addEventListener("click", () => {

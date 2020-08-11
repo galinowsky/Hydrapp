@@ -109,6 +109,9 @@ height: 300px;
   .navigation__link {
     width: 75%;
   }
+  .description {
+     width:230px;
+  }
 }
 #history-chart {
   width:95vw;
@@ -129,6 +132,7 @@ height: 300px;
   justify-content: space-around;
   align-items: center;
   height: 34vh;
+  margin: 0 15px;
 
   &__header{
     margin-bottom: 20px;
@@ -141,7 +145,10 @@ text-align: justify;
 }
 .portfolio-link{
   text-decoration: none; 
-  color:#183bac;
+  color:white;
   font-size: larger;
+}
+.portfolio-link:hover{
+  text-decoration: underline;
 }
 
