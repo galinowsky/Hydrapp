@@ -14,6 +14,10 @@ if (buttonChange) {
 // console.log(navHead)
 if (window) {
   window.addEventListener("resize", () => {
+    if ( window.innerWidth >= 520 && nav.classList.contains('navigation__open')){
+       nav.classList.toggle("navigation__open")
+      // nav.setAttribute('display','none')
+    }
     if (
       window.innerWidth >= 520 &&
       navHead.classList.toggle("app-bar__open")
