@@ -75,14 +75,15 @@ to {opacity: 1;}
 
 .app-bar {
   //  transition: all 2s ease-in 0.3s ;
-   animation: appBar 0.3s ease-in 0.3s both
+   animation: appBar 0.3s ease-in 0.3s both;
+   transition: height 0.3s ease-in-out
  }
  .hydro__counter {
   transition: all 0.1s ease-in  ;
  }
- .app-bar__open{
-
- }
+//  .app-bar__open{
+//   transition: all 1s ease-in  ;
+//  }
  .navigation__link {
   transition: all 0.1s ease-in  ;
  }

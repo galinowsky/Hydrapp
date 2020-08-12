@@ -9,20 +9,23 @@
   border-radius: 10px;
 
   &__open {
-    min-height: 230px;
+    height: 230px;
    
   }
   // margin: auto;
-  padding-top: 5px;
+  // padding-top: 5px;
   // width: 99vw;
 }
 
 .js-hamburger {
   display: none;
   position: absolute;
-  right: 40px;
-  top: 18px;
+  right: 35px;
+  top: 13px;
   color: white;
+  &:hover,:focus {  
+    font-size: larger;
+  }
 }
 
 .navigation {
