@@ -152,3 +152,21 @@ text-align: justify;
   text-decoration: underline;
 }
 
+.chart {
+  width: 70vw;
+  max-width: 1024px;
+  height: 55vh;
+}
+@media screen and (max-width: 720px) {
+  .chart {
+    width: 80vw;
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .chart {
+    width: 95vw;
+    height: 45vh;
+  }
+}
