@@ -23,16 +23,15 @@
     transform: scale(0.5) translateX(-400px);
   }
   50% {
-    transform: scale(0.3) translatex(0px); 
+    transform: scale(0.3) translatex(0px);
     opacity: 0;
-    
   }
   75% {
     opacity: 0;
-    transform: scale(0.5) translateX(400px);  
+    transform: scale(0.5) translateX(400px);
   }
   100% {
-    transform: scale(1) translate(0) ;
+    transform: scale(1) translate(0);
     opacity: 1;
   }
 }
@@ -45,53 +44,41 @@
     transform: scale(0.5) translateX(400px);
   }
   50% {
-    transform: scale(0.3) translatex(0px); 
+    transform: scale(0.3) translatex(0px);
     opacity: 0;
-    
   }
   75% {
     opacity: 0;
-    transform: scale(0.5) translateX(-400px);  
+    transform: scale(0.5) translateX(-400px);
   }
   100% {
-    transform: scale(1) translate(0) ;
+    transform: scale(1) translate(0);
     opacity: 1;
   }
 }
-@keyframes appBar{
-from {opacity: 0;}
-to {opacity: 1;}
+@keyframes appBar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .hydro__logo--enter {
-  animation: glassApear 0.5s ease-in 0.5s  both;
-//   animation: changeGlass 0.3s ease-in-out 0.2s forwards;
+  animation: glassApear 0.5s ease-in 0.5s both;
 }
 .changeGlassAnimationForward {
-    animation: changeGlassForward 0.4s ease-in-out 0.1s forwards;
+  animation: changeGlassForward 0.4s ease-in-out 0.1s forwards;
 }
 .changeGlassAnimationBack {
   animation: changeGlassBack 0.4s ease-in-out 0.1s forwards;
 }
 
 .app-bar {
-  //  transition: all 2s ease-in 0.3s ;
-   animation: appBar 0.3s ease-in 0.3s both;
-   transition: height 0.3s ease-in-out
- }
- .hydro__counter {
-  transition: all 0.1s ease-in  ;
- }
-//  .app-bar__open{
-//   transition: all 1s ease-in  ;
-//  }
- .navigation__link {
-  transition: all 0.1s ease-in  ;
- }
+  animation: appBar 0.3s ease-in 0.3s both;
+  transition: height 0.3s ease-in-out;
+}
 
-// .app-bar__open{
- .navigation__open {
-  animation: appBar 0.3s ease-in 0.3s both
- }
-// }
-//add animation on tranistion beteen days
-//add animation to fill glass after adding glass of water
+.navigation__open {
+  animation: appBar 0.3s ease-in 0.3s both;
+}
