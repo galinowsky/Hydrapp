@@ -46,7 +46,7 @@
   "dependencies": {
     "@material/button": "^7.0.0",
     "@material/top-app-bar": "^7.0.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "material-components-web": "^7.0.0",
     "moment": "^2.27.0",
     "normalize.css": "^8.0.1"
