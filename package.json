@@ -48,7 +48,7 @@
     "@material/top-app-bar": "^7.0.0",
     "chart.js": "^2.9.3",
     "material-components-web": "^7.0.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "normalize.css": "^8.0.1"
   }
 }
